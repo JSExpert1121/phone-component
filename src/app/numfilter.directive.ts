@@ -6,7 +6,7 @@ import { Directive, HostListener } from '@angular/core';
 export class NumfilterDirective {
 
 	@HostListener('keydown', ['$event']) onKeyDown(e: KeyboardEvent) {
-		if ((e.keyCode >= 35 && e.keyCode <= 39) || ([46, 8, 9, 27, 13].indexOf(e.keyCode) !== -1)) {
+		if ((e.keyCode >= 35 && e.keyCode <= 39) || ([46, 8, 9, 27, 13].indexOf(e.keyCode) !== -1) || (e.keyCode === 86 && e.metaKey === true) || (e.keyCode === 67 && e.metaKey === true)) {
 			return;
 		}
 
